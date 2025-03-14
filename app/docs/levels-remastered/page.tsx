@@ -121,8 +121,8 @@ export default function LevelsRemasteredPage() {
                 
                 <div className="space-y-4 text-gray-300">
                   <p>
-                    Levels Remastered is a premium Minecraft plugin that adds a comprehensive leveling system to your server. 
-                    It allows players to gain experience points (XP) through various activities and level up, unlocking rewards and perks along the way.
+                    Levels Remastered is a 1:1 recreation of the plugin in the popular Levels SMP. 
+                    It allows players to gain more hearts with the more experience they have, along with experience multipliers and lots of other features.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -278,7 +278,7 @@ export default function LevelsRemasteredPage() {
                       <li>A staff member will supply you with a license key that will work for your server</li>
                     </ol>
                     <p className="mt-3 text-sm text-gray-400">
-                      If you want to use the plugin on a new server, create a ticket and a staff member will help you transfer your license.
+                      If you want to use the plugin on a new server, create a ticket and a staff member will help you change the IP & HWID.
                     </p>
                   </div>
                   

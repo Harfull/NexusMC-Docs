@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { Lightbulb as LightbulbIcon } from 'lucide-react';
 import { 
   Settings, 
   FileText, 
@@ -432,6 +433,13 @@ crafting:
               <li><strong>MySQL</strong>: Better for larger servers or networks. Requires a MySQL server.</li>
               <li><strong>MongoDB</strong>: NoSQL option, good for very large servers or complex data.</li>
             </ul>
+          </div>
+
+          <div className="bg-yellow-500/10 p-3 rounded-lg border border-yellow-500/30 flex items-start gap-2">
+            <LightbulbIcon className="h-5 w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
+            <p className="text-sm text-blue-100">
+              MySQL and SQLite connections utilize HikariCP for significantly improved performance and connection efficiency, ensuring optimal response times even under heavy server loads.
+            </p>
           </div>
         </div>
       </motion.section>

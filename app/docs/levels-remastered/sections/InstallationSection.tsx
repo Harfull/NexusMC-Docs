@@ -91,8 +91,8 @@ export default function InstallationSection() {
             <h3 className="font-medium text-white mb-2">Required information:</h3>
             <ul className="list-disc list-inside space-y-1 pl-2 text-gray-300">
               <li>Proof of purchase</li>
-              <li>Your BuiltByBit username</li>
-              <li>Your server&apos;s IPv4 address</li>
+              <li>Your BuiltByBit profile link</li>
+              <li>Your server-info.txt file</li>
             </ul>
             
             <Link 
@@ -124,6 +124,31 @@ export default function InstallationSection() {
           </p>
         </div>
       </motion.section>
+
+      <motion.section variants={fadeIn} className="glass-card rounded-xl p-6">
+  <h2 className="text-xl font-semibold flex items-center gap-2 mb-4">
+    <MessageSquare className="h-5 w-5 text-primary" />
+    Quick License Setup
+  </h2>
+  
+  <div className="space-y-4 text-gray-300">
+    <p>
+      Get your license key instantly by syncing your Discord roles through these simple steps:
+    </p>
+    
+    <div className="mt-4">
+      <ol className="list-decimal list-inside space-y-3 pl-4">
+        <li>Ensure your Discord account is linked to your BuiltByBit account, then run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/sync</code> in the commands channel.</li>
+        <li>Once you receive the Levels Remastered role, run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/get-license</code> in the commands channel.</li>
+        <li>If you encounter any errors, verify your license key by running <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/licenses</code>.</li>
+      </ol>
+    </div>
+
+    <p className="mt-4">
+      After obtaining your license key, add it to your server configuration and create a support ticket to register your server details. Restart your server and it should work.
+    </p>
+  </div>
+</motion.section>
       
       <motion.div variants={fadeIn} className="flex justify-between items-center pt-4">
         <Link 

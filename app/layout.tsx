@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   title: "Nexus Studios",
   description: "Premium Minecraft plugins to enhance your server experience",
   icons: {
-    icon: "/nexus-assets/nexus-nobg.png",
-    apple: "/nexus-assets/nexus-nobg.png",
+    icon: "/nexus-assets/logo.png",
+    apple: "/nexus-assets/logo.png",
   },
   openGraph: {
     title: "Nexus Studios",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Nexus Studios",
     images: [
       {
-        url: "/nexus-assets/support-logo.png",
+        url: "/nexus-assets/docs logo.png",
         width: 1200,
         height: 630,
         alt: "Nexus Studios",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nexus Studios",
     description: "Premium Minecraft plugins to enhance your server experience",
-    images: ["/nexus-assets/nexus-nobg.png"],
+    images: ["/nexus-assets/docs logo.png"],
   },
   metadataBase: new URL("https://docs.nexusmc.xyz"),
 }
@@ -56,15 +56,15 @@ export default function RootLayout({
         {/* Metadata for Dynamic Titles & Open Graph */}
         <DynamicMeta />
 
-        {/* SVG Favicon */}
-        <link rel="icon" href="/nexus-assets/logo-nobg.png" type="image/svg+xml" />
+        {/* Favicon */}
+        <link rel="icon" href="/nexus-assets/logo.png" type="image/png" />
 
         {/* Fallback PNG for browsers that don't support SVG */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/nexus-assets/logo-nobg.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/nexus-assets/logo-nobg.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/nexus-assets/logo.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/nexus-assets/logo.png" />
 
         {/* Apple Touch Icon (for iOS devices) */}
-        <link rel="apple-touch-icon" href="/nexus-assets/logo-nobg.png" />
+        <link rel="apple-touch-icon" href="/nexus-assets/logo.png" />
       </head>
       <body className={cn(
         'min-h-screen bg-background font-sans antialiased stone-texture',

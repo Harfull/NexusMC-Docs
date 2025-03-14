@@ -10,6 +10,7 @@ interface CodeBlockProps {
   title?: string
   showLineNumbers?: boolean
   className?: string
+  maxHeight?: string
 }
 
 export default function CodeBlock({ 
@@ -17,7 +18,8 @@ export default function CodeBlock({
   language, 
   title, 
   showLineNumbers = false,
-  className
+  className,
+  maxHeight
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
   const preRef = useRef<HTMLPreElement>(null)
@@ -50,6 +52,7 @@ export default function CodeBlock({
           showLineNumbers && "with-line-numbers",
           className
         )}
+        style={maxHeight ? { maxHeight, overflow: "auto" } : undefined}
       >
         {children}
       </pre>

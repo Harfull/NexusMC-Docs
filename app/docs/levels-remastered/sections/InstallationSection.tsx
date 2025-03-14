@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react"
 import Link from "next/link"
@@ -10,7 +12,9 @@ import {
   AlertTriangle, 
   MessageSquare, 
   Server, 
-  ChevronRight 
+  ChevronRight,
+  Key,
+  Terminal
 } from "lucide-react"
 import CodeBlock from "@/components/ui/code-block"
 
@@ -35,120 +39,127 @@ export default function InstallationSection() {
   return (
     <div className="space-y-8">
       <motion.section variants={fadeIn} className="glass-card rounded-xl p-6">
-        <h2 className="text-xl font-semibold flex items-center gap-2 mb-4">
+        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
           <Download className="h-5 w-5 text-primary" />
-          Download Levels Remastered
+          Download & Install
         </h2>
         
         <div className="space-y-4 text-gray-300">
           <p>
-            You will first need to purchase the plugin if you haven&apos;t already. You can buy it through BuiltByBit.
+            Follow these steps to get Levels Remastered up and running on your server:
           </p>
           
-          <div className="bg-accent/20 p-4 rounded-lg border border-border/50 flex flex-col sm:flex-row items-start gap-3">
-            <div className="bg-amber-500/20 p-1.5 rounded-full mt-0.5 shrink-0">
-              <AlertTriangle className="h-4 w-4 text-amber-500" />
-            </div>
-            <div>
-              <p className="font-medium text-white">Only purchase from official sources</p>
-              <p className="text-sm text-gray-400 mt-1">
-                This is the only legit way to purchase the plugin. Do NOT purchase from any other sources.
-              </p>
-              <Link 
-                href="https://builtbybit.com/resources/levels-remastered.50363/" 
-                target="_blank"
-                className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium transition-colors"
-              >
-                <Download className="h-4 w-4" />
-                Purchase on BuiltByBit
-                <ExternalLink className="h-3 w-3 ml-1" />
-              </Link>
-            </div>
+          <div className="bg-accent/20 p-4 rounded-lg border border-border/50">
+            <h3 className="font-medium text-white mb-2">Step 1: Purchase</h3>
+            <p className="text-sm text-gray-400 mb-3">
+              Purchase Levels Remastered from our official BuiltByBit page. This is the only legitimate way to obtain the plugin.
+            </p>
+            <Link 
+              href="https://builtbybit.com/resources/levels-remastered.50363/" 
+              target="_blank"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium transition-colors"
+            >
+              <Download className="h-4 w-4" />
+              Purchase on BuiltByBit
+              <ExternalLink className="h-3 w-3 ml-1" />
+            </Link>
           </div>
-          
-          <div className="mt-4">
-            <ol className="list-decimal list-inside space-y-3 pl-4">
-              <li>After you have purchased the plugin, click the Download button to download the plugin.</li>
-              <li>After you have the plugin jar, add it to your server and restart it.</li>
-              <li>You will get an error message saying &quot;Invalid License&quot;, refer to the next step.</li>
+
+          <div className="bg-accent/20 p-4 rounded-lg border border-border/50">
+            <h3 className="font-medium text-white mb-2">Step 2: Installation</h3>
+            <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
+              <li>Download the plugin jar file from BuiltByBit</li>
+              <li>Place the jar file in your server&apos;s plugins folder</li>
+              <li>Start or restart your server</li>
+              <li>The plugin will generate a <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">server-info.txt</code> file</li>
             </ol>
           </div>
         </div>
       </motion.section>
       
       <motion.section variants={fadeIn} className="glass-card rounded-xl p-6">
-        <h2 className="text-xl font-semibold flex items-center gap-2 mb-4">
-          <MessageSquare className="h-5 w-5 text-primary" />
-          Join our Discord to get your license key
+        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
+          <Key className="h-5 w-5 text-primary" />
+          License Setup
         </h2>
         
         <div className="space-y-4 text-gray-300">
           <p>
-            After you have joined the discord, make a ticket and follow the instructions provided.
+            You have two options to get your license key:
           </p>
           
-          <div className="bg-accent/20 p-4 rounded-lg border border-border/50">
-            <h3 className="font-medium text-white mb-2">Required information:</h3>
-            <ul className="list-disc list-inside space-y-1 pl-2 text-gray-300">
-              <li>Proof of purchase</li>
-              <li>Your BuiltByBit profile link</li>
-              <li>Your server-info.txt file</li>
-            </ul>
-            
-            <Link 
-              href="https://discord.gg/nexusmcs" 
-              target="_blank"
-              className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium transition-colors"
-            >
-              <MessageSquare className="h-4 w-4" />
-              Join Discord Server
-              <ExternalLink className="h-3 w-3 ml-1" />
-            </Link>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="bg-accent/20 p-4 rounded-lg border border-border/50">
+              <h3 className="font-medium text-white mb-2 flex items-center gap-2">
+                <MessageSquare className="h-4 w-4 text-primary" />
+                Manual Setup
+              </h3>
+              <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
+                <li>Join our <a href="https://discord.gg/nexusmcs" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Discord server</a></li>
+                <li>Create a support ticket</li>
+                <li>Provide your:
+                  <ul className="list-disc list-inside pl-4 mt-1">
+                    <li>Proof of purchase</li>
+                    <li>BuiltByBit profile link</li>
+                    <li>server-info.txt file</li>
+                  </ul>
+                </li>
+                <li>Wait for staff to provide your license key</li>
+              </ol>
+            </div>
+
+            <div className="bg-accent/20 p-4 rounded-lg border border-border/50">
+              <h3 className="font-medium text-white mb-2 flex items-center gap-2">
+                <Terminal className="h-4 w-4 text-primary" />
+                Quick Setup
+              </h3>
+              <ol className="list-decimal list-inside space-y-2 pl-2 text-sm">
+                <li>Link your Discord to BuiltByBit</li>
+                <li>Run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/sync</code> in commands channel</li>
+                <li>Run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/get-license</code> to get your key</li>
+                <li>Verify with <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/licenses</code></li>
+              </ol>
+            </div>
           </div>
-          
-          <div className="mt-4">
-            <ol className="list-decimal list-inside space-y-3 pl-4">
-              <li>After that, a staff should supply you with a license key shortly.</li>
-              <li>You will get a DM with your license key, copy that and load it into your config.yml, and save it.</li>
-            </ol>
+
+          <div className="bg-accent/20 p-4 rounded-lg border border-border/50 mt-4">
+            <h3 className="font-medium text-white mb-2">Configure License Key</h3>
+            <p className="text-sm text-gray-400 mb-3">
+              Add your license key to the config.yml file:
+            </p>
+            <CodeBlock language="yaml" title="config.yml" showLineNumbers={false}>
+              {`# License Configuration
+license-key: "YOUR-LICENSE-KEY-HERE"
+# Obtain your license key from https://discord.gg/nexusmcs`}
+            </CodeBlock>
           </div>
-          
-          <CodeBlock language="yaml" title="config.yml" showLineNumbers={false}>
-            {`# License Configuration
-  license-key: "YOUR-LICENSE-KEY-HERE"
-  # Obtain your license key from https://discord.gg/RDE5u85kAX`}
-          </CodeBlock>
-          
-          <p className="mt-4">
-            Then the plugin should work after you restart your server. If it doesn&apos;t work, create a ticket and ask a staff for support or ping a staff member in the help channel.
-          </p>
         </div>
       </motion.section>
 
       <motion.section variants={fadeIn} className="glass-card rounded-xl p-6">
-  <h2 className="text-xl font-semibold flex items-center gap-2 mb-4">
-    <MessageSquare className="h-5 w-5 text-primary" />
-    Quick License Setup
-  </h2>
-  
-  <div className="space-y-4 text-gray-300">
-    <p>
-      Get your license key instantly by syncing your Discord roles through these simple steps:
-    </p>
-    
-    <div className="mt-4">
-      <ol className="list-decimal list-inside space-y-3 pl-4">
-        <li>Ensure your Discord account is linked to your BuiltByBit account, then run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/sync</code> in the commands channel.</li>
-        <li>Once you receive the Levels Remastered role, run <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/get-license</code> in the commands channel.</li>
-        <li>If you encounter any errors, verify your license key by running <code className="bg-gray-800 px-2 py-0.5 rounded text-gray-200">/licenses</code>.</li>
-      </ol>
-    </div>
+        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-4">
+          <Server className="h-5 w-5 text-primary" />
+          Final Steps
+        </h2>
+        
+        <div className="space-y-4 text-gray-300">
+          <ol className="list-decimal list-inside space-y-2 pl-2">
+            <li>Save your config.yml file</li>
+            <li>Restart your server</li>
+            <li>The plugin should now be working!</li>
+          </ol>
 
-    <p className="mt-4">
-      After obtaining your license key, add it to your server configuration and create a support ticket to register your server details. Restart your server and it should work.
-    </p>
-  </div>
-</motion.section>
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mt-4 flex gap-3">
+            <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
+            <div>
+              <h4 className="font-medium text-amber-400 mb-1">Need Help?</h4>
+              <p className="text-sm text-gray-300">
+                If you encounter any issues, create a support ticket in our Discord server and our staff will assist you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.section>
       
       <motion.div variants={fadeIn} className="flex justify-between items-center pt-4">
         <Link 

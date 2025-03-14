@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Book, FileText, Settings, Terminal, ChevronRight, ChevronDown, Search, Command } from "lucide-react"
+import { Book, FileText, Settings, Terminal, ChevronRight, ChevronDown, Search, Command, Code2, Clock } from "lucide-react"
 
 interface DocsSidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   setSearchOpen?: (open: boolean) => void;
@@ -136,6 +136,36 @@ export default function DocsSidebar({ className, setSearchOpen }: DocsSidebarPro
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full" />
                     )}
                   </Link>
+
+                  <Link
+                    href="/docs/levels-remastered?s=skript"
+                    className={cn(
+                      "flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative",
+                      pathname === "/docs/levels-remastered" && searchParams?.get("s") === "skript"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-gray-300 hover:bg-accent/30 hover:text-white"
+                    )}
+                  >
+                    Skript Integration
+                    {pathname === "/docs/levels-remastered" && searchParams?.get("s") === "skript" && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full" />
+                    )}
+                  </Link>
+
+                  <Link
+                    href="/docs/levels-remastered?s=plugins"
+                    className={cn(
+                      "flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative",
+                      pathname === "/docs/levels-remastered" && searchParams?.get("s") === "plugins"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-gray-300 hover:bg-accent/30 hover:text-white"
+                    )}
+                  >
+                    Plugin Support
+                    {pathname === "/docs/levels-remastered" && searchParams?.get("s") === "plugins" && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full" />
+                    )}
+                  </Link>
                 </div>
               )}
             </div>
@@ -146,18 +176,21 @@ export default function DocsSidebar({ className, setSearchOpen }: DocsSidebarPro
               <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
             </div>
             <div className="space-y-1">
-              <span
-                className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg text-gray-500 cursor-not-allowed"
+              <Link
+                href="/docs/changelog"
+                className={cn(
+                  "flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative",
+                  pathname === "/docs/changelog"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-gray-300 hover:bg-accent/30 hover:text-white"
+                )}
               >
-                <Terminal className="h-4 w-4" />
-                API Reference
-              </span>
-              <span
-                className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg text-gray-500 cursor-not-allowed"
-              >
-                <Settings className="h-4 w-4" />
-                Support
-              </span>
+                <Clock className="h-4 w-4" />
+                Changelog
+                {pathname === "/docs/changelog" && (
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-primary rounded-r-full" />
+                )}
+              </Link>
             </div>
           </div>
         </div>

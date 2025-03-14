@@ -59,36 +59,6 @@ export default function Footer() {
               <motion.p variants={fadeInUp} className="text-gray-400 text-sm mt-4">
                 Premium Minecraft plugins to enhance your server experience with advanced features and optimized performance.
               </motion.p>
-              
-              {/* Social links - Only Discord enabled */}
-              <motion.div variants={fadeInUp} className="flex items-center gap-3 mt-4">
-                <div 
-                  className="relative"
-                  onMouseEnter={() => setHovered("discord")}
-                  onMouseLeave={() => setHovered(null)}
-                >
-                  <Link 
-                    href="https://discord.gg/nexusstudios" 
-                    target="_blank"
-                    className="flex items-center justify-center w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                  >
-                    <DiscordLogoIcon className="h-5 w-5" />
-                  </Link>
-                  
-                  {hovered === "discord" && (
-                    <motion.span 
-                      initial={{ opacity: 0, y: -5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -5 }}
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 text-xs text-gray-400 whitespace-nowrap"
-                    >
-                      Join Discord
-                    </motion.span>
-                  )}
-                </div>
-                
-                {/* Other social buttons removed */}
-              </motion.div>
             </div>
           </motion.div>
           
